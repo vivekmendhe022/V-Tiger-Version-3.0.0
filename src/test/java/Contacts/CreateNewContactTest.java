@@ -14,13 +14,14 @@ import object.repository.contacts.CreateNewContactsPage;
 
 public class CreateNewContactTest extends BaseClass {
 
-	@Test(groups = { "SmokeSuite", "RegressionSuite" }, priority = 1, invocationCount = 3, enabled = true)
+	@Test(groups = { "SmokeSuite",
+			"RegressionSuite" }, priority = 1, enabled = true, retryAnalyzer = generic.utility.RetryAnalyserUtility.class)
 	public void createNewContactTest() throws EncryptedDocumentException, IOException {
 
 		int r = jutil.getRandomNumber();
 
 		String SalutationType = eutil.readDataFromExcelSheet("Contact", 4, 5);
-		String FIRSTNAME = eutil.readDataFromExcelSheet("Contact", 4, 4);
+		String FIRSTNAME = eutil.readDataFromExcelSheet("Contact", 4, 4) + " " + r;
 		String LASTNAME = eutil.readDataFromExcelSheet("Contact", 4, 2) + " " + r;
 
 		HomePage hp = new HomePage(d);

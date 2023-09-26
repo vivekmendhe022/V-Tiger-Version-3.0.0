@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Organisation.CreateOrganisationTest">
+      <class name="CompatilityTesting.C_B2">
         <methods>
-          <include name="BSConfig"/>
-          <include name="ACConfig"/>
-          <include name="createOrgTest"/>
-          <include name="ASConfig"/>
-          <include name="AMConfig"/>
-          <include name="BCConfig"/>
-          <include name="BMConfig"/>
+          <include name="browserRun" invocation-numbers="1 0 2"/>
         </methods>
-      </class> <!-- Organisation.CreateOrganisationTest -->
+      </class> <!-- CompatilityTesting.C_B2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

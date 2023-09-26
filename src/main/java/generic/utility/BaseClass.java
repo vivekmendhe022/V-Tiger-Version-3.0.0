@@ -29,6 +29,7 @@ public class BaseClass {
 	public ExcelFileUtility eutil = new ExcelFileUtility();
 
 	public WebDriver d = null;
+	public static WebDriver SDriver;
 
 	@BeforeSuite(groups = { "SmokeSuite", "RegressionSuite" })
 	public void BSConfig() {
@@ -53,6 +54,8 @@ public class BaseClass {
 		default:
 			System.out.println("INVALID BROWSER NAME: " + BROWSER);
 		}
+
+		SDriver = d;
 
 		d.manage().window().maximize();
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import generic.utility.BaseClass;
@@ -12,9 +13,10 @@ import object.repository.organisation.CreateNewOrganisationPage;
 import object.repository.organisation.OrganisationInfoPage;
 import object.repository.organisation.OrganisationPage;
 
+@Listeners(generic.utility.ListneresImplimentationUtility.class)
 public class CreateOrganisationTest extends BaseClass {
 
-	@Test(groups = { "SmokeSuite", "RegressionSuite" }, priority = 1, invocationCount = 3, enabled = true)
+	@Test(groups = { "SmokeSuite", "RegressionSuite" }, priority = 1, invocationCount = 1, enabled = true)
 	public void createOrgTest() throws EncryptedDocumentException, IOException {
 
 		int r = jutil.getRandomNumber();
@@ -27,7 +29,7 @@ public class CreateOrganisationTest extends BaseClass {
 
 		OrganisationPage op = new OrganisationPage(d);
 		op.clickOnCreateOrganizationsLookUpImg();
-
+		
 		CreateNewOrganisationPage cnop = new CreateNewOrganisationPage(d);
 		cnop.createOrgWithIndustry(d, ORGNAME, INDUSTRYNAME);
 
